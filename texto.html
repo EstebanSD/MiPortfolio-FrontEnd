@@ -41,35 +41,59 @@
                          alt="" width="35px" height="35px"></a>
                     <a href="https://www.facebook.com/esteban.salvaydilena" target="_blanck"><img src="http://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png"
                          alt="" width="35px" height="35px"></a>
-                    <button id="edit">Login</button>
+                    <button id="edit" onclick="editar()" value="false">Login</button>
                  </span>
 
                 </div> 
             <!--</div>-->
         
             <div class="container" class="perfil">
-                <img class="banner" src="https://fondosmil.com/fondo/23347.jpg" 
+                <img id="banner" src="https://fondosmil.com/fondo/23347.jpg" 
                     alt="">
-                <img class="foto" src="https://pbs.twimg.com/profile_images/1320232062272626688/-5FkTa5d_400x400.jpg" 
+                        <button id="edit-img-banner" class="edit-img" onclick="editImg('banner','texto-banner')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                                alt="">
+                        </button>
+                        <input type="text" id="texto-banner" class="input-texto" value="">
+
+                <img id="foto" src="https://pbs.twimg.com/profile_images/1320232062272626688/-5FkTa5d_400x400.jpg" 
                     alt="" width="100px" height="100px">
+                        <button id="edit-img-foto" class="edit-img" onclick="editImg('foto','texto-foto')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                                alt="">
+                        </button>
+                        <input type="text" id="texto-foto" class="input-texto" value="">
             </div>
 
             <div class="container" id="acerca_de">
                 <div class ="row" class="datos">
                     <div class="col-4">
-                    <h4><u>Datos Personales</u></h4>
-                    <b>Nombre:</b> Esteban Salvay Dilena<br>
-                    <b>Edad:</b> 27<br>
-                    <b>E-mail:</b> estebansaldil22@gmail.com<br>
-                    <b>Teléfono:</b> 3584904406<br>
-                    <b>Título:</b> Full Stack Developer Jr.
+                        
+                    <button id="edit-datos" class="edit-p"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                               alt="">
+                    </button>
+                    <input type="text" id="texto-datos" class="input-texto" value="">
+                        
+                     <h4><u>Datos Personales</u></h4>
+                     <b>Nombre:</b> Esteban Salvay Dilena<br>
+                     <b>Edad:</b> 27<br>
+                     <b>E-mail:</b> estebansaldil22@gmail.com<br>
+                     <b>Teléfono:</b> 3584904406<br>
+                     <b>Título:</b> Full Stack Developer Jr.
                     </div>
                 
 
-                <div class="col-8" class="resumen">
+                <div class="col-8" class="espect">
+                    
+                    <button id="edit-esp" class="edit-p" onclick="editText('texto-esp','p-text')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                            alt="">
+                    </button>
+                    <input type="text" id="texto-esp" class="input-texto" value="">
+
                     <h4><u>Espectativas</u></h4>
-                    <p>Como futuro Analísta en Computación espero poder adquirir experiencia en el ámbito laboral informático, para seguir enriqueciendome en el uso y aplicación de los distintos lenguajes de programación. A la par de poder trabajar en proyectos ambiciosos junto a un buen equipo de personas.</p>
-                </div>
+                    <p id="p-text">Como futuro Analísta en Computación espero poder adquirir experiencia
+                         en el ámbito laboral informático, para seguir enriqueciendome en el uso 
+                         y aplicación de los distintos lenguajes de programación. 
+                         A la par de poder trabajar en proyectos ambiciosos junto
+                          a un buen equipo de personas.</p>
                 </div>
             </div>
             
