@@ -1,141 +1,338 @@
 <!DOCTYPE html>
 <html>
-   <!--
-       ! Bootstrap CSS 
-        <head>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        </head>
-            
-       ! Bootstrap JS 
-        <body>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin= "anonymous"></script>
-        </body>
-    -->
     <head>
         <meta charset="UTF-8">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">        
         <link rel="stylesheet" href="vista.css">
-        
+
         <title>Mi Portfolio - Esteban SD</title>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/45/45569.png">
+
     </head>
     <body>
-        <header>
-            <!--<div class="container" class="cabezal">-->
-                <div class="logo"> <!-- class="col-4"-->
-                    <!--<div class="col-5">-->
-                     <svg width="50px" height="50px">
-                      <circle cx="25" cy="25" r="20"></circle>
-                      <polyline points="15 15, 21,23 15,30" fill="none" stroke="white" stroke-linecap="round" stroke-width="2"></polyline>
-                      <line x1="23" y1="33" x2="33" y2="33" fill="none" stroke="yellow" stroke-linecap="round" stroke-width="2"></line>
-                     </svg>
-                     <span>Argentina Programa - #YoProgramo</span>
-                    <!--</div>-->
-                <!--<div class="col-4"></div>-->
-                <!--<div class="col-4">-->
-                 <span class="redes">
-                    <a href="https://twitter.com/SalvayDilenaEst" target="_blanck"><img src="data:image/png;base64,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"
-                         alt="" width="35px" height="35px"></a>
-                    <a href="https://www.instagram.com/estebansalvaydilena/?hl=es-la" target="_blanck"><img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-13.png"
-                         alt="" width="35px" height="35px"></a>
-                    <a href="https://www.facebook.com/esteban.salvaydilena" target="_blanck"><img src="http://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png"
-                         alt="" width="35px" height="35px"></a>
-                    <button id="edit" onclick="editar()" value="false">Login</button>
-                 </span>
+        <div id="caja-login">
+            <div class="caja-form">
+                <div class="form-login">
+                    <form action="">
+                        <h2>Iniciar Sesión</h2>
+                        <input id="input-login-correo" type="text" placeholder="Correo Electrónico" name="correo">
+                        <input id="input-login-pass" type="password" placeholder="Contraseña" name="pass">
+                        <button onclick="verificarLogin()">Entrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor-total">
+            <header>
+                    <div class="logo">
+                        <span>
+                                <svg width="50px" height="50px">
+                                    <circle cx="25" cy="25" r="20"></circle>
+                                    <polyline points="15 15, 21,23 15,30" fill="none" stroke="white" stroke-linecap="round" stroke-width="2"></polyline>
+                                    <line x1="23" y1="33" x2="33" y2="33" fill="none" stroke="yellow" stroke-linecap="round" stroke-width="2"></line>
+                                </svg>
+                                <span>Argentina Programa - #YoProgramo</span>
+                        </span>
+                        <span class="redes">
+                                <a href="https://twitter.com/SalvayDilenaEst" target="_blanck"><img src="data:image/png;base64,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"
+                                        alt="" width="35px" height="35px"></a>
+                                <a href="https://www.instagram.com/estebansalvaydilena/?hl=es-la" target="_blanck"><img src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-13.png"
+                                        alt="" width="35px" height="35px"></a>
+                                <a href="https://www.facebook.com/esteban.salvaydilena" target="_blanck"><img src="http://assets.stickpng.com/images/584ac2d03ac3a570f94a666d.png"
+                                        alt="" width="35px" height="35px"></a>
+                                <button id="edit" onclick="mostrarLogin()" value="false">Login</button>
+                        </span>
+                    </div> 
+            
+                <div class="perfil">
+                    <div>
+                        <img id="banner" src="https://fondosmil.com/fondo/23347.jpg" 
+                            alt="">
+                            <button type="button" id="edit-img-banner" class="edit-img" onclick="editImg('input-banner')">
+                                <img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                                    alt="">
+                            </button>
+                            <input id="input-banner" type="file" style="display:none">
 
-                </div> 
-            <!--</div>-->
-        
-            <div class="container" class="perfil">
-                <img id="banner" src="https://fondosmil.com/fondo/23347.jpg" 
+                        <img id="foto" src="https://pbs.twimg.com/profile_images/1320232062272626688/-5FkTa5d_400x400.jpg" 
+                            alt="" width="100px" height="100px">
+                            <button id="edit-img-foto" class="edit-img" onclick="editImg()">
+                                <img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                                    alt="">
+                            </button>
+                            <input id="input-foto" type="text" style="display:none">
+                    </div>
+                </div>
+
+                <div class="container datos">
+                    <button type="button" id="edit-datos" class="edit-p"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                        alt="">
+                    </button>
+                    <input type="text" id="texto-datos" class="input-texto" value="" style="display:none">
+                    
+                    <div class ="row">                        
+                        <h4><u>Datos Personales</u></h4>
+                        <span class="col-6">
+                            <p><b>Nombre:</b> Esteban Salvay Dilena</p>
+                            <p><b>Edad:</b> 27</p>
+                            <p><b>Título:</b> Full Stack Developer Jr.</p>
+                        </span>
+                        <span class="col-6">
+                            <p><b>E-mail:</b> estebansaldil22@gmail.com</p>
+                            <p><b>Teléfono:</b> 3584904406</p>
+                            <p><b>Ciudad:</b> Rio Cuarto</p>
+                        </span>
+                    </div>
+                </div>
+                
+            </header>
+
+            <div class="container quienSoy">
+                <button type="button" id="edit-quienSoy" class="edit-p" onclick="obtenerTexto('input-quienSoy','parrafo-quienSoy')">
+                    <img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
                     alt="">
-                        <button id="edit-img-banner" class="edit-img" onclick="editImg('banner','texto-banner')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
-                                                alt="">
-                        </button>
-                        <input type="text" id="texto-banner" class="input-texto" value="">
-
-                <img id="foto" src="https://pbs.twimg.com/profile_images/1320232062272626688/-5FkTa5d_400x400.jpg" 
-                    alt="" width="100px" height="100px">
-                        <button id="edit-img-foto" class="edit-img" onclick="editImg('foto','texto-foto')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
-                                                alt="">
-                        </button>
-                        <input type="text" id="texto-foto" class="input-texto" value="">
+                </button> 
+                
+                <div class="row">
+                    <div class="col">
+                        <h4><u>Acerca de Mi</u></h4>
+                        <p id="parrafo-quienSoy">
+                            Me concidero una persona a la que le
+                            gusta aprender. Siempre estoy abierto a
+                            las críticas constructivas y a ayudar a
+                            alguien en temas que esten dentro de mis
+                            capacidades.
+                        </p>
+                    </div>
+                    <input id="input-quienSoy" oninput="cambiarTexto(this.value,'parrafo-quienSoy')" type="text" style="display:none">
+                </div>
             </div>
 
-            <div class="container" id="acerca_de">
-                <div class ="row" class="datos">
-                    <div class="col-4">
+            <div class="container espect">
                         
-                    <button id="edit-datos" class="edit-p"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
-                                               alt="">
-                    </button>
-                    <input type="text" id="texto-datos" class="input-texto" value="">
-                        
-                     <h4><u>Datos Personales</u></h4>
-                     <b>Nombre:</b> Esteban Salvay Dilena<br>
-                     <b>Edad:</b> 27<br>
-                     <b>E-mail:</b> estebansaldil22@gmail.com<br>
-                     <b>Teléfono:</b> 3584904406<br>
-                     <b>Título:</b> Full Stack Developer Jr.
+                <button type="button" id="edit-esp" class="edit-p" onclick="obtenerTexto('texto-esp','parrafo-esp')">
+                    <img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                                        alt="">
+                </button>
+
+                <div class="row">
+                    <div class="col">
+                        <h4><u>Espectativas</u></h4>
+                        <p id="parrafo-esp">Como futuro Analísta en Computación espero poder adquirir experiencia
+                            en el ámbito laboral informático, para seguir enriqueciendome en el uso 
+                            y aplicación de los distintos lenguajes de programación. 
+                            A la par de poder trabajar en proyectos ambiciosos junto
+                            a un buen equipo de personas.
+                        </p>
                     </div>
-                
+                    <input id="texto-esp" oninput="cambiarTexto(this.value,'parrafo-esp')" type="text" style="display:none">
+                </div>
+            </div>
 
-                <div class="col-8" class="espect">
-                    
-                    <button id="edit-esp" class="edit-p" onclick="editText('texto-esp','p-text')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
-                                            alt="">
-                    </button>
-                    <input type="text" id="texto-esp" class="input-texto" value="">
-
-                    <h4><u>Espectativas</u></h4>
-                    <p id="p-text">Como futuro Analísta en Computación espero poder adquirir experiencia
-                         en el ámbito laboral informático, para seguir enriqueciendome en el uso 
-                         y aplicación de los distintos lenguajes de programación. 
-                         A la par de poder trabajar en proyectos ambiciosos junto
-                          a un buen equipo de personas.</p>
+            <div class="container exp">
+                <div class="row">
+                    <div class="col">
+                        <h4><u>Experiencia Laboral</u></h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>De 04/2017 a
+                                        04/2019<br>
+                                        <em>(Rio Cuarto)</em>
+                                    </td>
+                                    <td><b>Roberto Dilena & Cia</b><br>
+                                        <em>Receptor y Emisor de Carta Porte</em><br>
+                                        <u>Tareas realizadas:</u> Mi experiencia laboral es muy
+                                        acotada, fue en una empresa familiar en la que
+                                        me encargaba de gestionar documentos que les
+                                        permitia a los choferes cargar y descargar grano.
+                                        Ganando un poco de experiencia en atención al
+                                        cliente y en uso de excel.
+                                    </td>
+                                </tr>  
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             
-        </header>
+            <div class="container educacion">
+                <div class="row">
+                    <div class="col">
+                        <h4><u>Educación</u></h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                        <td>02/2019 - Actualidad</td>
+                                        <td><b>Analista en Computación</b><br>
+                                            <a href="https://www.exa.unrc.edu.ar/analistaencomputacion/" target="_blanck"><em>Universidad Nacional de Rio Cuarto</em></a><br>
+                                            Cursando actualmente 2º año de la carrera, con 6
+                                            materias rendidas, un promedio de 8.67 (sin aplazos) y de 7 (con aplazos)
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                        <td>2022 - 2023</td>
+                                        <td><b>Full Stack Developer Jr.</b><br>
+                                            <a href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa" target="_blanck"><em>Beca Argentina Programa</em></a>
+                                        </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-        <div class="container" id="experiencia">
-            <article class="exp">
-                <h4><u>Experiencia Laboral</u></h4>
-                 <p class="rd-cia">2017-2019</p>
-                 <p>Dos años como receptora y emisor de cartas porte para la empresa cerealera "Roberto Dilena & cia".
-                  Adquirí un mínimo de atención al cliente y uso de excel.</p>
-            </article>
-        </div>
-        
-        <div class="container" id="educacion">
-            <article class="edu">
-                <h4><u>Educación</u></h4>
-                <ul>
-                    <li>Analista en Computación en <a href="https://www.unrc.edu.ar/unrc/carreras/ProgAsig2.php?n=QiZi9hLT57Fip/rkJOHhJZaaCYsBAPETixEYkBrhlAI=" target="_blanck">UNRC</a>
-                     (cursando)</li>
-                    <li><a href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa" target="_blanck">Beca Argentina Programa</a>
-                     (2021-2022)</li>
-                </ul>
-            </article>
-        </div>
-        <div class="container" id="habilidades">
-            <article class="leng">
-                <h4><u>Habilidades</u></h4>
-                <ul>
-                    <li>C</li><progress max="100" value="80">80%</progress>
-                    <li>HTML</li><progress max="100" value="50">50%</progress>
-                    <li>CSS</li><progress max="100" value="50">50%</progress>
-                    <li>JavaScript</li><progress max="100" value="50">50%</progress>
-                </ul>
-            </article>
-        </div>
+            <div class="container idiomas">
+                <button id="edit-idioma" class="edit-p" onclick="editText('texto-esp','p-text')"><img src="https://w7.pngwing.com/pngs/994/388/png-transparent-computer-icons-editing-font-awesome-graphics-editor-advertising-angle-text-logo.png"
+                    alt="">
+                </button>
+                <input type="text" id="texto-esp" class="input-texto" value="" style="display:none">
+                
+                <div class="row">
+                    <div class="col">
+                        <h4><u>Idiomas</u></h4>
+                        <ul>
+                            <li>Español</li>
+                            <li>Inglés (Intermedio)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-    <!--
-        <footer>
-        </footer>
-    -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin= "anonymous"></script>
-        <script src="func.js"></script>
+            <div class="container habilidades">
+                <div class="row">
+                    <h4><u>Habilidades Duras</u></h4>
+                    <div class="col-md-3 col-sm-6" style="background-color: rgb(90, 89, 89); margin: 2%; padding: 1%;">
+                        <div class="progreso c">
+                            <span class="progreso-left">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <span class="progreso-right">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <div class="progreso-value">C</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" style="background-color: rgb(90, 89, 89); margin: 2%; padding: 1%;">
+                        <div class="progreso html">
+                            <span class="progreso-left">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <span class="progreso-right">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <div class="progreso-value">HTML</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" style="background-color: rgb(90, 89, 89); margin: 2%; padding: 1%;">
+                        <div class="progreso css">
+                            <span class="progreso-left">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <span class="progreso-right">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <div class="progreso-value">CSS</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" style="background-color: rgb(90, 89, 89); margin: 2%; padding: 1%;">
+                        <div class="progreso javascript">
+                            <span class="progreso-left">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <span class="progreso-right">
+                                <span class="progreso-barra"></span>
+                            </span>
+                            <div class="progreso-value">JavaScript</div>
+                        </div>
+                    </div>
+                <!-- //Vieja Barra de Progreso//
+                    <div class="col">
+                        <ul>
+                            <li>C</li><progress max="100" value="80">80%</progress>
+                            <li>HTML</li><progress max="100" value="50">50%</progress>
+                            <li>CSS</li><progress max="100" value="50">50%</progress>
+                            <li>JavaScript</li><progress max="100" value="50">50%</progress>
+                        </ul>
+                    </div>
+                -->
+                </div>
+            </div>
+
+            <div class="container habilidades2">
+                <div class="row">
+                    <h4><u>Habilidades Blandas</u></h4>
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-success">
+                                <tr>
+                                    <td>Ética</td>
+                                    <td>Normas, valores y principios que
+                                        regulan el correcto actuar mi
+                                        persona a lo largo de mi vida y carrera
+                                        profesional.</td>
+                                </tr>
+                                <tr>
+                                    <td>Empatía</td>
+                                    <td>Ponerme en el lugar de los demás y ser
+                                        solidario.</td>
+                                </tr>
+                                <tr>
+                                    <td>Trabajo en Equipo</td>
+                                    <td>Capacidad para entender que uno
+                                        forma parte de algo mayor y que en la medida que
+                                        los esfuerzos de los distintos actores se
+                                        conjugan existe una mayor probabilidad
+                                        de éxito en el logro de los objetivos que
+                                        se han planteado como grupo.</td>
+                                </tr>
+                                <tr>
+                                    <td>Adaptación al Cambio</td>
+                                    <td>Sé que vivimos en un mundo
+                                        dinámico y en permanente evolución, lo
+                                        que me obliga a ser flexible para adecuarme
+                                        a las nuevas circunstancias y los
+                                        cambios de escenarios que tienen lugar.</td>
+                                </tr>
+                                <tr>
+                                    <td>Capacidad para Resolver Problemas</td>
+                                    <td>Desarrollar soluciones que ayuden
+                                        a superar las dificultades que se
+                                        presenten y en donde todos saquen
+                                        experiencias y se beneficien en materia
+                                        de aprendizaje.</td>
+                                </tr>
+                                <tr>
+                                    <td>Respeto de las Opiniones</td>
+                                    <td>Tolerar los puntos de vista diferentes
+                                        y que cada persona tiene derecho a pensar
+                                        diferente.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        <!--
+            <footer>
+            </footer>
+        -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin= "anonymous"></script>
+            <script src="func.js"></script>
+        </div>
     </body>
 </html>
